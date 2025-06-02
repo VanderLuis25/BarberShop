@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Corte de Cabelo</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>Agendar seu Corte</h1>
+
+        <div class="form-group">
+            <label for="barberSelect">Selecione o Barbeiro:</label>
+            <select id="barberSelect">
+                <option value="">-- Escolha um Barbeiro --</option>
+                <option value="Luis">Edi Rodrigues1</option>
+                <option value="Janielson">Edi Rodrigues2</option>
+                <option value="barber3">Edi Rodrigues3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cutType">Tipo de Corte:</label>
+            <input type="text" id="cutType" placeholder="Ex: Degradê, Social, Barba, etc.">
+        </div>
+
+        <div class="form-group">
+            <label for="dateInput">Data Desejada:</label>
+            <input type="date" id="dateInput">
+        </div>
+
+        <div class="form-group">
+            <label for="timeInput">Hora Desejada:</label>
+            <input type="time" id="timeInput">
+        </div>
+
+        <button id="scheduleButton">Agendar Corte</button>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

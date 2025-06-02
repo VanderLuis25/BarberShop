@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.container {
+    background: #f74a00;
+    background: linear-gradient(181deg, rgba(247, 74, 0, 1) 20%, rgba(222, 96, 7, 1) 47%, rgba(237, 110, 31, 1) 89%);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(240, 238, 238);
+    width: 400px;
+    height: 550px;
+    margin: 25px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura */
+}
+
+button {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #03420b;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f7f7f7;
+    color: #f70000;
+    border: 1px solid #ffffff;
+}
+
+@media (max-width: 375px) {
+    
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 25px;
+         margin-top: 5%;
+    }
+}
+@media (min-width: 414px) {
+   
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 20px;
+    }
+}
+@media (max-width: 390px) {
+  
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 20px;
+    }
+}
+@media (min-width: 768px) {
+   
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 25px;
+        margin-top: 5%;
+    }
+}
+@media (min-width: 1280px) {
+   
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 25px;
+        margin-top: 5%;
+    }
+}
+@media (max-width: 428px) {
+   
+
+    .container {
+        width: 400px;
+        height: 100%;
+        margin: 25px;
+        margin-top: 5%;
+    }
+}
