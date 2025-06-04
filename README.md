@@ -6,7 +6,7 @@
 - [Description](#description)
 - [Screenshot](#screenshot)
 - [My process](#my-process)
-- [Link Site](#Link site)
+- [Link Site](#Link-site)
 - [Author](#author)
 
 
@@ -37,8 +37,8 @@ Um dos maiores desafios e focos aqui foi a responsividade. Garantir que o site f
 Por fim, integrei o JavaScript para trazer vida e interatividade ao projeto. Embora o Barbershop Edi Rodrigues seja um site mais focado em apresentação, o JavaScript foi utilizado para adicionar funcionalidades que melhoram a experiência do usuário. Por exemplo, a criação de menus responsivos que abrem e fecham com um clique, validação de formulários de contato ou até mesmo pequenas animações que tornam a navegação mais fluida e envolvente.
 Cada script adicionado foi uma oportunidade de aprofundar meu conhecimento na lógica de programação e na manipulação do DOM.
 
-##Link Sit
-https://barbershop-testsite.netlify.app/
+##Link Site
+- https://barbershop-testsite.netlify.app/
 
 ## Author
 - Front-end developer: "Vander Luís".
