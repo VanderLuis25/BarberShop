@@ -6,7 +6,7 @@
 - [Description](#description)
 - [Screenshot](#screenshot)
 - [My process](#my-process)
-- [Site Link](#site link)
+- [Site Link](#site-link)
 - [Author](#author)
 
 
