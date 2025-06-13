@@ -11,20 +11,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: black;
 }
 
 .container {
     background: #f74a00;
     background: linear-gradient(181deg, rgba(247, 74, 0, 1) 20%, rgba(222, 96, 7, 1) 47%, rgba(237, 110, 31, 1) 89%);
-    padding: 30px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(240, 238, 238);
     width: 400px;
-    height: 550px;
-    margin: 25px;
+    height: 420px;
     text-align: center;
+    margin: 25px;
 }
 
 h1 {
@@ -96,8 +95,6 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 25px;
-         margin-top: 5%;
     }
 }
 @media (min-width: 414px) {
@@ -106,7 +103,6 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 20px;
     }
 }
 @media (max-width: 390px) {
@@ -115,7 +111,6 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 20px;
     }
 }
 @media (min-width: 768px) {
@@ -124,8 +119,6 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 25px;
-        margin-top: 5%;
     }
 }
 @media (min-width: 1280px) {
@@ -134,8 +127,6 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 25px;
-        margin-top: 5%;
     }
 }
 @media (max-width: 428px) {
@@ -144,7 +135,5 @@ button:hover {
     .container {
         width: 400px;
         height: 100%;
-        margin: 25px;
-        margin-top: 5%;
     }
 }
