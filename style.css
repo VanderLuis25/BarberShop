@@ -72,7 +72,7 @@ h2 {
 p {
     font-size: 25px;
     font-weight: 600;
-    color: #A0522D;
+    color:rgb(255, 69, 0);
     text-align: center;
     margin-top: 50px;
     width: 900px;
@@ -82,7 +82,7 @@ p {
 button {
     position: relative;
     content: "";
-    background-color: #A0522D;
+    background-color: rgb(255, 69, 0);
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -99,7 +99,7 @@ button {
 
 button:hover {
     scale: 1.0;
-    background-color: #d44e10;
+    background-color: rgb(255, 69, 0);
 }
 
  button:focus {
@@ -144,7 +144,7 @@ footer p {
     .container p {
         font-size: 15px;
         font-weight: 600;
-        color: rgb(209, 60, 5);
+        color: rgb(255, 60, 5);
         text-align: center;
         margin-top: 50px;
         width: 300px;
@@ -154,7 +154,7 @@ footer p {
     .container button {
         position: relative;
         content: "";
-        background-color: #d44e10;
+        background-color: rgb(255, 69, 0);
         color: #000000;
         border: none;
         border-radius: 5px;
@@ -179,33 +179,33 @@ footer p {
     }
 }
 
-@media screen and (min-width: 390px) {
-  
+@media (min-width: 390px) {
 
-    .container h1 {
-        font-size: 45px;
+
+    h1 {
+        font-size: 35px;
     }
 
-    .container h2 {
+    h2 {
         font-size: 35px;
         font-weight: 700;
-        color: rgb(250, 106, 4);
+        color: rgb(255, 69, 5);
     }
 
-    .container p {
+    p {
         font-size: 18px;
         font-weight: 500;
-        color: rgb(250, 106, 4);
+        color: rgb(255, 69, 0);
         text-align: center;
         margin-top: 50px;
         width: 400px;
         margin: 25px 25px;
     }
 
-    .container button {
+     button {
         position: relative;
         content: "";
-        background-color: #d44e10;
+        background-color: rgb(255, 69, 0);
         color: #000000;
         border: none;
         border-radius: 5px;
@@ -230,32 +230,32 @@ footer p {
     }
 }
 
-@media screen and (min-width: 768px) {
- 
-    .container h1 {
-        font-size: 60px;
-    }
+@media (min-width: 768px) {
 
-    .container h2 {
+    h1 {
         font-size: 45px;
-        font-weight: 700;
-        color: rgb(250, 106, 4);
     }
 
-    .container p {
-        font-size: 25px;
+    h2 {
+        font-size: 35px;
+        font-weight: 700;
+        color: rgb(255, 69, 5);
+    }
+
+    p {
+        font-size: 20px;
         font-weight: 500;
-        color: rgb(250, 106, 4);
+        color: rgb(255, 69, 5);
         text-align: center;
         margin-top: 50px;
         width: 600px;
         margin: 25px 25px;
     }
 
-    .container button {
+    button {
         position: relative;
         content: "";
-        background-color: #d44e10;
+        background-color: rgb(255, 69, 0);
         color: #000000;
         border: none;
         border-radius: 5px;
