@@ -13,6 +13,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    flex-direction: column;
+    
 }
 
 .container {
@@ -20,9 +22,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    max-width: 10000px;
     padding: 20px;
 
 }
@@ -86,13 +87,14 @@ button {
     color: #000000;
     border: none;
     border-radius: 5px;
-    padding: 10px 40px;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     margin-top: 40px;
     box-shadow: 0 0 10px rgba(7, 0, 0, 0.808), 0 0 20px rgba(0, 0, 0, 0.5);
     transition-duration: 2s;
+    width: 140px;
+    height: 35px;
 
 
 }
@@ -115,24 +117,27 @@ footer {
     bottom: 0;
     position: fixed;
     display: flex;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     margin: 15px;
     justify-content: space-between;
     color: #f1f0f0;
     font-size: 15px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 320px) {
 
 
     .container h1 {
-        font-size: 35px;
+        font-size: 28px;
     }
 
     .container h2 {
@@ -151,21 +156,7 @@ footer p {
         margin: 25px 25px;
     }
 
-    .container button {
-        position: relative;
-        content: "";
-        background-color: rgb(255, 69, 0);
-        color: #000000;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 40px;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        margin: 40px;
-        box-shadow: 0 0 10px rgba(7, 0, 0, 0.808), 0 0 20px rgba(0, 0, 0, 0.5);
 
-    }
 
     footer p {
         display: flex;
@@ -179,7 +170,7 @@ footer p {
     }
 }
 
-@media (min-width: 390px) {
+@media (min-width: 360px) {
 
 
     h1 {
@@ -193,30 +184,15 @@ footer p {
     }
 
     p {
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 400;
         color: rgb(255, 69, 0);
         text-align: center;
         margin-top: 50px;
-        width: 400px;
-        margin: 25px 25px;
+        width: 300px;
+        margin: 25px;
     }
 
-     button {
-        position: relative;
-        content: "";
-        background-color: rgb(255, 69, 0);
-        color: #000000;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 40px;
-        font-size: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        margin: 40px;
-        box-shadow: 0 0 10px rgba(7, 0, 0, 0.808), 0 0 20px rgba(0, 0, 0, 0.5);
-
-    }
 
     footer p {
         display: flex;
@@ -251,22 +227,27 @@ footer p {
         width: 600px;
         margin: 25px 25px;
     }
+    
+button {
+    position: relative;
+    content: "";
+    background-color: rgb(255, 69, 0);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(7, 0, 0, 0.808), 0 0 20px rgba(0, 0, 0, 0.5);
+    transition-duration: 2s;
+    width: 140px;
+    height: 35px;
 
-    button {
-        position: relative;
-        content: "";
-        background-color: rgb(255, 69, 0);
-        color: #000000;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 40px;
-        font-size: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        margin: 40px;
-        box-shadow: 0 0 10px rgba(7, 0, 0, 0.808), 0 0 20px rgba(0, 0, 0, 0.5);
 
-    }
+}
+
+  
 
     footer p {
         display: flex;
@@ -277,6 +258,7 @@ footer p {
         justify-content: space-between;
         color: #f1f0f0;
         font-size: 10px;
+        flex-direction: column;
     }
 }
 
