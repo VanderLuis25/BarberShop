@@ -134,8 +134,8 @@ main p {
 }
 
 .container {
-    width: 340px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
 
     position: relative;
     overflow: hidden;
