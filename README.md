@@ -18,7 +18,7 @@ Eu me dediquei a cada detalhe, desde a estruturação do conteúdo com HTML, pas
 O Barbershop Edi Rodrigues não é apenas um site; é a materialização do meu esforço e do conhecimento que adquiri no DevClub. Ele representa um passo importante na minha jornada como desenvolvedor, e estou muito orgulhoso do resultado final. Mal posso esperar para aplicar o que aprendi em futuros projetos!
 
 ## Screenhot
-![](./imagem-fundo/macbo.png).
+![](./img/macbo.png)
 
 ## My process
 - HTML
