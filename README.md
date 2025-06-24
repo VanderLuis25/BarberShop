@@ -38,7 +38,7 @@ Por fim, integrei o JavaScript para trazer vida e interatividade ao projeto. Emb
 Cada script adicionado foi uma oportunidade de aprofundar meu conhecimento na lógica de programação e na manipulação do DOM.
 
 ## Site Link
-- https://barbershop-edirodrigues.netlify.app/site/
+- https://barbershop-edirodrigues.netlify.app/
 
 ## Author
 - Front-end developer: "Vander Luís".
