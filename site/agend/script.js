@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const phoneNumber = barberPhones[selectedBarber];
         if (phoneNumber) {
-            const message = `Olá, ${selectedBarber}! Gostaria de agendar um corte ${cutType} para ${date} às ${time}. Cliente: [Seu Nome - opcional].`;
+            const message = `Olá, ${selectedBarber}! Gostaria de agendar um corte ${cutType} para ${date} às ${time}. Cliente: [Seu Nome].`;
             const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappLink, '_blank');
             displayMessage('Redirecionando para o WhatsApp do barbeiro...', 'success');
