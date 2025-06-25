@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Corte de Cabelo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Agendar seu Corte</h1>
+
+        <div class="form-group">
+            <label for="barberSelect">Selecione o Barbeiro:</label>
+            <select id="barberSelect">
+                <option value="">-- Escolha um Barbeiro --</option>
+                <option value="Luis">Edi Rodrigues1</option>
+                <option value="Janielson">Edi Rodrigues2</option>
+                <option value="barber3">Edi Rodrigues3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cutType">Tipo de Corte:</label>
+            <select id="cutType" name="servico">
+                <option value="">Selecione um serviço</option>
+                <option value="corte-masculino">Corte</option>
+                <option value="barba-modelada">Barba</option>
+                <option value="combo-corte-barba">Combo</option>
+                <option value="corte-infantil">Corte Infantil</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dateInput">Data Desejada:</label>
+            <input type="date" id="dateInput">
+        </div>
+
+        <div class="form-group">
+            <label for="timeInput">Hora Desejada:</label>
+            <input type="time" id="timeInput">
+        </div>
+
+        <button id="scheduleButton">Agendar Corte</button>
+        <button onclick="history.back()" style="margin-top: 10px;">Voltar</button>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+     <script>
+    // Código JavaScript virá aqui
+    // Aguarda o carregamento completo do DOM (Document Object Model)
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Pega os parâmetros da URL
+      const params = new URLSearchParams(window.location.search);
+      const servicoParam = params.get('servico'); // Obtém o valor do parâmetro 'servico'
+
+      // 2. Encontra o elemento <select> do serviço no formulário
+      const selectServico = document.getElementById('servicoEscolhido');
+
+      // 3. Verifica se um serviço foi passado na URL e se o select existe
+      if (servicoParam && selectServico) {
+        // Itera sobre as opções do <select>
+        for (let i = 0; i < selectServico.options.length; i++) {
+          // Se o valor da opção for igual ao valor do parâmetro da URL
+          if (selectServico.options[i].value === servicoParam) {
+            // Seleciona essa opção
+            selectServico.selectedIndex = i;
+            // Opcional: Desabilita o campo para evitar que o usuário mude (se a lógica de negócio permitir)
+            // selectServico.disabled = true;
+            break; // Sai do loop assim que encontrar e selecionar
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
