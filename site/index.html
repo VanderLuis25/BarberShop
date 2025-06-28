@@ -78,57 +78,55 @@
 
     </section>
 
-    <section id="servicos" class="servicos">
-        <h1>Os Nossos Serviços </h1>
+    <section id="servicos" class="services-section">
+    <h1>Nossos Serviços</h1>
 
-        <div class="container-card">
-
-            <div class="card">
-                <h3>Corte</h3>
-                <div class="corte">
-                    <p>Um corte intemporal, perfeito para o dia a dia.</p>
-                    <h6 class="valor">R$ 25,00</h6>
-                    <a href="./agend/index.html?sevico=corte">
-                        <button>Agendar Corte</button>
-                    </a>
-                </div>
+    <div class="services-container">
+        <article class="service-card">
+            <h3>Corte</h3>
+            <div class="card-content">
+                <p>Um corte intemporal, perfeito para o dia a dia.</p>
+                <h6 class="price">R$ 25,00</h6>
+                <a href="./agend/index.html?servico=corte-masculino">
+                    <button>Agendar Corte de Cabelo</button>
+                </a>
             </div>
+        </article>
 
-            <div class="card">
-                <h3>Barba</h3>
-                <div class="corte">
-                    <p>Barba aparada e modelada para um look impecável.</p>
-                    <h6 class="valor">R$ 25,00</h6>
-                    <a href="./agend/index.html?servico=barba">
-                        <button>Agendar Barba</button></a>
-                </div>
+        <article class="service-card">
+            <h3>Barba</h3>
+            <div class="card-content">
+                <p>Barba aparada e modelada para um look impecável.</p>
+                <h6 class="price">R$ 25,00</h6>
+                <a href="./agend/index.html?servico=barba-modelada">
+                    <button>Agendar Corte de Barba</button>
+                </a>
             </div>
+        </article>
 
-        </div>
-
-        <div class="card">
-            <div class="corte">
-                <h3>Combo</h3>
-                <p>Corte Cabelo e Barba, com as últimas tendências .</p>
-                <h6 class="valor">R$ 50,00</h6>
-                <a href="./agend/index.html?servico=cabelo-barba">
+        <article class="service-card">
+            <h3>Combo</h3>
+            <div class="card-content">
+                <p>Corte Cabelo e Barba, com as últimas tendências.</p>
+                <h6 class="price">R$ 50,00</h6>
+                <a href="./agend/index.html?servico=combo-corte-barba">
                     <button>Agendar Cabelo e Barba</button>
                 </a>
             </div>
-        </div>
+        </article>
 
-        <div class="card">
-            <div class="corte">
-                <h3>Corte Infantil</h3>
+        <article class="service-card">
+            <h3>Corte Infantil</h3>
+            <div class="card-content">
                 <p>Até 10 anos</p>
-                <h6 class="valor">R$ 15,00</h6>
+                <h6 class="price">R$ 15,00</h6>
                 <a href="./agend/index.html?servico=corte-infantil">
                     <button>Agendar Corte Infantil</button>
                 </a>
             </div>
-
-        </div>
-    </section>
+        </article>
+    </div>
+</section>
 
     <section id="barbeiros" class="profissionais">
         <h1>Os Nossos Barbeiros</h1>
@@ -201,7 +199,29 @@
     </script>
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Path to your appointment form HTML file
+            // Make sure this path is correct relative to your main page
+            const appointmentFormUrl = './agend/index.html';
+            // Select all buttons that should open the appointment form
+            const serviceButtons = document.querySelectorAll('.select-service-button');
 
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Get the cut type from the 'data-cut-type' attribute of the clicked button
+                    const cutType = event.target.dataset.cutType;
+                    if (cutType) {
+                        // Construct the URL with the cut type parameter
+                        const url = `${appointmentFormUrl}?cutType=${encodeURIComponent(cutType)}`;
+                        // Open the URL in a new tab
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+        });
+
+    </script>
 
 
 </body>
