@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (phoneNumber) {
       const selectedServiceText = cutTypeSelect.options[cutTypeSelect.selectedIndex].text;
       // mensagem que vai aparecer para o barbeiro selecionado .
-      const message = `Olá, ${selectedBarber}! Gostaria de agendar um  ${selectedServiceText} para ${date} às ${time}. Cliente: ${clientName}.`;
+      const message = `Olá, ${selectedBarber}! Gostaria de agendar um serviço, ${selectedServiceText} para ${date} às ${time}. Cliente: ${clientName}.`;
       const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappLink, '_blank');
       displayMessage('Redirecionando para o WhatsApp do barbeiro...', 'success');
