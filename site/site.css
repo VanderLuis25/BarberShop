@@ -279,9 +279,12 @@ button:active {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+     transition: transform 0.3s ease;
 
 }
-
+.service-card:hover{
+ transform: translateY(-10px);
+}
 article {
     position: relative;
     margin-top: 0;
