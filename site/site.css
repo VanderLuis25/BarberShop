@@ -110,6 +110,50 @@ main p {
     font-size: 1em;
 }
 
+.sobre-nos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/imagem-fundo/03.jpg);
+    width: fit-content 100%;
+    overflow: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.sobre-nos h1 {
+    margin-top: 80px;
+    font-weight: 700;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(255, 67, 10);
+}
+
+.nos {
+    margin: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.nos p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: 30px;
+    color: #ff4901;
+}
+
 .galeria {
     display: flex;
     width: 100%;
@@ -261,7 +305,7 @@ button:active {
     gap: 10px;
     flex-wrap: wrap;
     position: relative;
-   
+
 
 }
 
@@ -274,55 +318,67 @@ button:active {
     border-radius: 10px;
     cursor: pointer;
     padding: 5px;
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-     transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 
 }
-.service-card:hover{
- transform: translateY(-10px);
+
+.service-card:hover {
+    transform: translateY(-10px);
 }
+
 article {
     position: relative;
     margin-top: 0;
     flex-direction: column;
 }
-article h3{
+
+article h3 {
     position: absolute;
     top: 0;
     margin: 15px;
     color: #f1f0ef;
 }
-.card-content p{
+
+.card-content p {
     font-size: 22px;
     margin-top: 15px;
 }
-.card-content h6{
+
+.card-content h6 {
     font-size: 28px;
     font-weight: 600;
     margin-top: 10px;
 }
-.card-content{
+
+.card-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.card-content button{
+
+.card-content button {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 25px;
-   
+
 }
-.card-content button{
+
+.card-content button {
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background-color: #080808;
+    color: rgb(255, 255, 255);
 }
 
 
