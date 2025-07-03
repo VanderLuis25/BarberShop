@@ -19,13 +19,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(240, 238, 238);
     width: 400px;
-    height: 420px;
+    height: auto;
     text-align: center;
     margin: 25px;
 }
 
 h1 {
     margin-bottom: 25px;
+}
+
+h2, h3 {
+    color: #000000;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .form-group {
@@ -50,18 +56,18 @@ select {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
-    /* Garante que o padding não aumente a largura */
 }
 
 button {
     background-color: #ff4500;
     color: white;
-    padding: 10px 60px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-top: 5px;
 }
 
 button:hover {
@@ -87,51 +93,46 @@ button:hover {
     border: 1px solid #ffffff;
 }
 
-@media (max-width: 375px) {
-    
+.hidden-panel {
+    display: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 20px;
+    margin-top: 20px;
+}
 
+@media (max-width: 375px) {
     .container {
-        width: 400px;
-        height: 100%;
+        width: 90%;
+        height: auto;
     }
 }
 @media (min-width: 414px) {
-   
-
     .container {
-        width: 400px;
-        height: 100%;
+        width: 90%;
+        height: auto;
     }
 }
 @media (max-width: 390px) {
-  
-
     .container {
-        width: 400px;
-        height: 100%;
+        width: 90%;
+        height: auto;
     }
 }
 @media (min-width: 768px) {
-   
-
     .container {
         width: 400px;
-        height: 100%;
+        height: auto;
     }
 }
 @media (min-width: 1280px) {
-   
-
     .container {
         width: 400px;
-        height: 100%;
+        height: auto;
     }
 }
 @media (max-width: 428px) {
-   
-
     .container {
-        width: 400px;
-        height: 100%;
+        width: 90%;
+        height: auto;
     }
 }
