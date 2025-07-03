@@ -180,7 +180,6 @@ main p {
 .container {
     width: 500px;
     height: 500px;
-
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -202,7 +201,7 @@ main p {
 
 .slide {
     animation-name: animacao;
-    animation-duration: 20s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     display: flex;
