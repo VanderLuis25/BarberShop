@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dados dos barbeiros e horários
     const barberPhones = {
         'Edi': '5511952511928',
-        'Gui': '5511947857728',
+        'Gui': '5511952511928',
         'Joao': '5511952511928'
     };
 
