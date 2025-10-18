@@ -456,7 +456,7 @@ button:active {
   max-width: 100%;
   margin: 0 auto;
   padding: 80px 20px;
-  background-color: #000000;
+  background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -473,6 +473,17 @@ button:active {
   text-transform: uppercase;
   position: relative;
 }
+.services-section h1:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(61, 18, 1), #8b6914);
+  border-radius: 2px;
+}
 .services-container {
   width: 100%;
   display: flex;
@@ -482,17 +493,25 @@ button:active {
 }
 
 .service-card {
-  width: 300px;
+  width: 280px;
   height: auto;
-  background-color: rgb(255, 69, 0);
+  background-color: rgb(221, 221, 221);
   border-radius: 20px;
   margin: 20px;
   align-items: center;
+  box-shadow: 0 0 40px rgba(7, 3, 0, 0.808);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Eleva o card em 10px */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4); /* Aumenta e suaviza a sombra */
 }
 
 .service-card img {
   width: 100%;
-  height: 290px;
+  height: 250px;
   border: none;
   border-radius: 10px 10px 0 0;
 }
@@ -500,7 +519,7 @@ button:active {
   font-weight: 700;
   font-size: 20px;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
 }
 .service-card .card-content {
   width: 100%;
@@ -512,8 +531,9 @@ button:active {
 }
 .service-card .card-content p {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
+  width: 200px;
 }
 .service-card .card-content h6 {
   font-weight: 500;
@@ -524,7 +544,6 @@ button:active {
   font-weight: 800;
   font-size: 16px;
   text-align: center;
-  margin: 10px;
 }
 .service-card .card-content button {
   width: 200px;
@@ -533,9 +552,18 @@ button:active {
   margin: 10px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(161, 75, 40);
+  background-color: rgb(112, 49, 24);
+  color: #e8e8e8;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.service-card .card-content button:hover {
+  background-color: rgb(182, 95, 57); /* Um tom um pouco mais escuro */
+  transform: scale(1.05); /* Aumenta um pouco o botão */
+}
 
 .barbeiros {
   display: flex;
