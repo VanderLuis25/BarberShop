@@ -205,20 +205,38 @@
     </section>
 
     <!-- 2. GALERIA - Para mostrar qualidade do trabalho -->
-    <section class="galeria" id="galeria">
-      <h1>Galeria</h1>
-      <div class="container">
-        <div class="slide">
-          <img src="/img/03.png" alt="Imagem 1" />
-          <img src="/img/04.png" alt="Imagem 2" />
-          <img src="/img/07.png" alt="Imagem 3" />
-          <img src="/img/08.png" alt="Imagem 4" />
-          <img src="/img/03.png" alt="Imagem 1" />
+     <section class="galeria" id="galeria">
+        <div class="galeria-header">
+            <h1>Nossa Galeria</h1>
+            <p>Explore nossos trabalhos e projetos mais recentes. Cada imagem conta uma história de dedicação e excelência.</p>
         </div>
-      </div>
-      <a href="/site/galeria.html">
-        <button>Ver Mais Fotos</button>
-      </a>
+        
+        <div class="container">
+            <div class="slide">
+                <img src="" alt="Projeto de Design 1" />
+                <img src="" alt="Projeto de Design 2" />
+                <img src="" alt="Projeto de Design 3" />
+                <img src="" alt="Projeto de Design 4" />
+                <img src="" alt="Projeto de Design 5" />
+            </div>
+        </div>
+        
+        <div class="galeria-controls">
+            <div class="control-btn prev">❮</div>
+            <div class="control-btn next">❯</div>
+        </div>
+        
+        <div class="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+        
+        <a href="/site/galeria.html">
+            <button>Ver Mais Fotos</button>
+        </a>
     </section>
 
     <!-- 3. BARBEIROS - Para construir confiança -->
@@ -227,19 +245,19 @@
 
       <div class="barbeiros">
         <div class="profissional">
-          <img src="/img/ed.png" alt="Edi Rodrigues" />
+          <img src="/assets/fotos-barbearia/profissional1.png" alt="Edi Rodrigues" />
           <h4>Edi Rodrigues</h4>
           <p>Especialista em cortes clássicos e tradicionais.</p>
         </div>
 
         <div class="profissional">
-          <img src="/img/ed.png" alt="Edi Rodrigues" />
+          <img src="/assets/fotos-barbearia/profissional.png" alt="Edi Rodrigues" />
           <h4>Edi Rodrigues</h4>
           <p>Domina as técnicas de modelagem de barba.</p>
         </div>
 
         <div class="profissional">
-          <img src="/img/ed.png" alt="Edi Rodrigues" />
+          <img src="/assets/profissional3.png" alt="Edi Rodrigues" />
           <h4>Edi Rodrigues</h4>
           <p>Barbeiro moderno, sempre a par das últimas tendências.</p>
         </div>
@@ -344,6 +362,73 @@
 
         observer.observe(sobreNosSection);
       });
+
+      //ação da galeria//
+       document.addEventListener('DOMContentLoaded', function() {
+            const slide = document.querySelector('.slide');
+            const images = document.querySelectorAll('.slide img');
+            const prevBtn = document.querySelector('.control-btn.prev');
+            const nextBtn = document.querySelector('.control-btn.next');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const totalImages = images.length;
+            
+            // Configurar largura do slide
+            slide.style.width = `${totalImages * 100}%`;
+            
+            // Função para atualizar a posição do slide
+            function updateSlidePosition() {
+                slide.style.transform = `translateX(-${currentIndex * (100 / totalImages)}%)`;
+                
+                // Atualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Event listeners para os botões
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+                updateSlidePosition();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+                updateSlidePosition();
+            });
+            
+            // Event listeners para os indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateSlidePosition();
+                });
+            });
+            
+            // Auto-play (opcional)
+            let autoPlayInterval = setInterval(function() {
+                currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+                updateSlidePosition();
+            }, 5000);
+            
+            // Pausar auto-play ao interagir
+            const galleryContainer = document.querySelector('.container');
+            galleryContainer.addEventListener('mouseenter', function() {
+                clearInterval(autoPlayInterval);
+            });
+            
+            galleryContainer.addEventListener('mouseleave', function() {
+                autoPlayInterval = setInterval(function() {
+                    currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+                    updateSlidePosition();
+                }, 5000);
+            });
+        });
     </script>
   </body>
 </html>
