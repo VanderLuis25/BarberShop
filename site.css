@@ -1340,3 +1340,92 @@ footer p {
     justify-content: space-between;
     color: #f1f0f0;
 }
+
+/* ==========================================================================
+   Estilos Responsivos (Tablet e Mobile)
+   ========================================================================== */
+
+/* Estilos para Tablets (e telas menores que 992px) */
+@media (max-width: 992px) {
+  /* Esconde o menu desktop e mostra o botão do menu mobile */
+  .menu {
+    display: none;
+  }
+  .btn-mobile {
+    display: flex;
+  }
+  .agendar-btn {
+    display: none; /* Esconde o botão de agendamento principal */
+  }
+
+  /* Ajustes gerais de espaçamento e fontes */
+  .sobre-nos,
+  .services-section,
+  .profissionais,
+  .contato {
+    padding: 60px 20px;
+  }
+
+  .sobre-nos h1,
+  .services-section h1,
+  .profissionais h1,
+  .galeria h1,
+  .contato h1 {
+    font-size: 2.5rem;
+  }
+
+  .barbeiros {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .profissional {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contato-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* Estilos para Celulares (e telas menores que 576px) */
+@media (max-width: 576px) {
+  header {
+    padding: 12px 20px;
+  }
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .inicio h1 {
+    font-size: 2.2em;
+  }
+  .inicio p {
+    font-size: 1.1em;
+  }
+
+  .sobre-nos, .services-section, .profissionais, .contato {
+    padding: 40px 15px;
+  }
+
+  .sobre-nos h1, .services-section h1, .profissionais h1, .galeria h1, .contato h1 {
+    font-size: 2rem;
+  }
+
+  .services-container {
+    padding: 0 10px;
+  }
+
+  .service-card {
+    width: 260px; /* Diminui um pouco o card de serviço */
+    margin: 15px;
+  }
+
+  .container {
+    height: 300px; /* Ajusta a altura da galeria */
+  }
+}
