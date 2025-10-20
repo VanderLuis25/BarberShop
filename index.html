@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="site.css" />
-  
 
     <link
       rel="shortcut icon"
@@ -17,52 +16,51 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Barbershop</title>
+    <title>Barbershop-Edi-Rodrigues</title>
   </head>
 
   <body>
     <!--header-->
-   <header>
-        <div class="logo">
-            <a href="/index.html">
-                <img src="/assets/logo/LOGO-3.png">
+    <header>
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="/assets/logo/LOGO-3.png"
+            alt="Logo Barbershop Edi Rodrigues"
+        /></a>
+      </div>
+
+      <nav>
+        <div class="menu">
+          <ul>
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#sobre-nos">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#barbeiros">Barbeiros</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
         </div>
 
-        <nav>
-            <div class="menu">
-                <ul>
-                    <li><a href="#inicio" class="active">Início</a></li>
-                    <li><a href="#sobre-nos">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#barbeiros">Barbeiros</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
+        <div class="btn-mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
 
-
-            <div class="btn-mobile">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="menu-mobile">
-                <div class="close-mobile">
-                    <i class="fas fa-times"></i>
-                </div>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre-nos">Sobre Nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#barbeiros">Barbeiros</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-               
-            </div>
-        </nav>
-      </header>
+    <div class="menu-mobile">
+      <div class="close-mobile"><i class="fas fa-times"></i></div>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre-nos">Sobre Nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#barbeiros">Barbeiros</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
 
     <!--home -->
     <main id="inicio" class="inicio">
@@ -282,7 +280,7 @@
               <span class="especialidade">Cortes Clássicos</span>
               <span class="especialidade">Tradicional</span>
             </div>
-           <div class="social-links">
+            <div class="social-links">
               <a href="https://www.instagram.com/" target="_blank"
                 ><i class="fab fa-instagram"
                   ><img
@@ -411,122 +409,152 @@
         <i class="fas fa-calendar-alt"></i> Agendar Horário
       </a>
     </section>
-<!--cantato-->
- <section id="contato" class="contato">
-        <div class="contato-header">
-            <h1>Entre em Contato</h1>
-            <p class="subtitle">Estamos sempre à disposição para atender você. Venha nos visitar ou entre em contato através dos nossos canais.</p>
+    <!--cantato-->
+    <section id="contato" class="contato">
+      <div class="contato-header">
+        <h1>Entre em Contato</h1>
+        <p class="subtitle">
+          Estamos sempre à disposição para atender você. Venha nos visitar ou
+          entre em contato através dos nossos canais.
+        </p>
+      </div>
+
+      <div class="contato-container">
+        <div class="info-contato">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h3>Nosso Endereço</h3>
+              <p>Rua da Barbearia Edi, 000, São Francisco (Califórnia)</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-content">
+              <h3>Telefone</h3>
+              <p>+00 (00) 00000-0000</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="far fa-clock"></i>
+            </div>
+            <div class="info-content">
+              <h3>Horário de Funcionamento</h3>
+              <div class="horarios">
+                <div class="horario-item">
+                  <span class="horario-dia">Segunda - Sexta:</span>
+                  <span class="horario-hora">09:00 - 19:00</span>
+                </div>
+                <div class="horario-item">
+                  <span class="horario-dia">Sábado:</span>
+                  <span class="horario-hora">08:00 - 18:00</span>
+                </div>
+                <div class="horario-item">
+                  <span class="horario-dia">Domingo:</span>
+                  <span class="horario-hora">Fechado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="far fa-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h3>E-mail</h3>
+              <p>contato@barbeariaedi.com</p>
+            </div>
+          </div>
         </div>
 
-        <div class="contato-container">
-            <div class="info-contato">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Nosso Endereço</h3>
-                        <p>Rua da Barbearia Edi, 000, São Francisco (Califórnia)</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Telefone</h3>
-                        <p>+00 (00) 00000-0000</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="far fa-clock"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>Horário de Funcionamento</h3>
-                        <div class="horarios">
-                            <div class="horario-item">
-                                <span class="horario-dia">Segunda - Sexta:</span>
-                                <span class="horario-hora">09:00 - 19:00</span>
-                            </div>
-                            <div class="horario-item">
-                                <span class="horario-dia">Sábado:</span>
-                                <span class="horario-hora">08:00 - 18:00</span>
-                            </div>
-                            <div class="horario-item">
-                                <span class="horario-dia">Domingo:</span>
-                                <span class="horario-hora">Fechado</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <i class="far fa-envelope"></i>
-                    </div>
-                    <div class="info-content">
-                        <h3>E-mail</h3>
-                        <p>contato@barbeariaedi.com</p>
-                    </div>
-                </div>
+        <div class="form-contato">
+          <h2>Envie uma Mensagem</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <input
+                type="text"
+                id="nome"
+                class="form-control"
+                placeholder="Seu nome completo"
+                required
+              />
             </div>
-
-            <div class="form-contato">
-                <h2>Envie uma Mensagem</h2>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" class="form-control" placeholder="seuemail@exemplo.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" class="form-control" placeholder="Como podemos ajudá-lo?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-                </form>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="seuemail@exemplo.com"
+                required
+              />
             </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input
+                type="tel"
+                id="telefone"
+                class="form-control"
+                placeholder="(00) 00000-0000"
+              />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea
+                id="mensagem"
+                class="form-control"
+                placeholder="Como podemos ajudá-lo?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+          </form>
         </div>
+      </div>
 
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100849.17935024868!2d-122.52000194999999!3d37.7576793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbr!4v1689976723456!5m2!1sen!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100849.17935024868!2d-122.52000194999999!3d37.7576793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbr!4v1689976723456!5m2!1sen!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
 
-        <div class="rede-social">
-              <a href="https://www.instagram.com/" target="_blank"
-                ><i class="fab fa-instagram"
-                  ><img
-                    class="insta"
-                    src="/assets/icons/icon.instagram.png"
-                    alt="imagem-instagram" /></i
-              ></a>
+      <div class="rede-social">
+        <a href="https://www.instagram.com/" target="_blank"
+          ><i class="fab fa-instagram"
+            ><img
+              class="insta"
+              src="/assets/icons/icon.instagram.png"
+              alt="imagem-instagram" /></i
+        ></a>
 
-              <a href="https://www.facebook.com/" target="_blank"
-                ><i class="fab fa-facebook-f"
-                  ><img
-                    src="/assets/icons/icon.facebook.png"
-                    alt="imagem-facebook" /></i
-              ></a>
+        <a href="https://www.facebook.com/" target="_blank"
+          ><i class="fab fa-facebook-f"
+            ><img
+              src="/assets/icons/icon.facebook.png"
+              alt="imagem-facebook" /></i
+        ></a>
 
-              <a href="https://web.whatsapp.com/" target="_blank"
-                ><i class="fab fa-whatsapp"
-                  ><img
-                    src="/assets/icons/icon.whatsapp.png"
-                    alt="imagem-whatsapp" /></i
-              ></a>
-            </div>
+        <a href="https://web.whatsapp.com/" target="_blank"
+          ><i class="fab fa-whatsapp"
+            ><img
+              src="/assets/icons/icon.whatsapp.png"
+              alt="imagem-whatsapp" /></i
+        ></a>
+      </div>
     </section>
-    
+
     <script aria-keyshortcuts="3d7ce8ab-4438-435e-b9a6-9a3688a6d5bd"></script>
     <script
       type="module"
@@ -540,61 +568,60 @@
 
     <script>
       //mobile//
-      document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('header');
-            const btnMobile = document.querySelector('.btn-mobile');
-            const menuMobile = document.querySelector('.menu-mobile');
-            const closeMobile = document.querySelector('.close-mobile');
-            const agendarBtnMobile = document.querySelector('.agendar-btn.mobile');
-            
-            // Efeito de scroll no header
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            
-            // Abrir menu mobile
-            btnMobile.addEventListener('click', function() {
-                btnMobile.classList.toggle('active');
-                menuMobile.classList.toggle('active');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            // Fechar menu mobile
-            closeMobile.addEventListener('click', function() {
-                btnMobile.classList.remove('active');
-                menuMobile.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-            
-            // Fechar menu ao clicar em um link
-            const mobileLinks = document.querySelectorAll('.menu-mobile a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    btnMobile.classList.remove('active');
-                    menuMobile.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-            
-            // Botão agendar no desktop
-            const agendarBtn = document.querySelector('.agendar-btn:not(.mobile)');
-            if (agendarBtn) {
-              // O link <a> já faz o redirecionamento, não precisa de JS aqui.
-            }
-            
-            // Ativar link atual no menu
-            const menuLinks = document.querySelectorAll('.menu a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+        const btnMobile = document.querySelector(".btn-mobile");
+        const menuMobile = document.querySelector(".menu-mobile");
+        const closeMobile = document.querySelector(".close-mobile");
+
+        // Efeito de scroll no header
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         });
+
+        // Abrir menu mobile
+        btnMobile.addEventListener("click", function () {
+          this.classList.add("active");
+          menuMobile.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+
+        // Fechar menu mobile
+        closeMobile.addEventListener("click", function () {
+          btnMobile.classList.remove("active"); // O ícone hambúrguer volta ao normal
+          menuMobile.classList.remove("active");
+          document.body.style.overflow = "auto";
+        });
+
+        // Fechar menu ao clicar em um link
+        const mobileLinks = document.querySelectorAll(".menu-mobile a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            btnMobile.classList.remove("active");
+            menuMobile.classList.remove("active");
+            document.body.style.overflow = "auto";
+          });
+        });
+
+        // Botão agendar no desktop
+        const agendarBtn = document.querySelector(".agendar-btn:not(.mobile)");
+        if (agendarBtn) {
+          // O link <a> já faz o redirecionamento, não precisa de JS aqui.
+        }
+
+        // Ativar link atual no menu
+        const menuLinks = document.querySelectorAll(".menu a");
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            menuLinks.forEach((l) => l.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
     </script>
 
     <script>
@@ -711,54 +738,61 @@
         });
       });
       // profissionais //
-              // Efeito de revelação ao rolar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            const profissionais = document.querySelectorAll('.profissional');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            profissionais.forEach(profissional => {
-                profissional.style.opacity = '0';
-                profissional.style.transform = 'translateY(20px)';
-                profissional.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(profissional);
-            });
-        });
-        //contatos//
-   document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simulação de envio do formulário
-                const btnEnviar = contactForm.querySelector('.btn-enviar');
-                const originalText = btnEnviar.textContent;
-                
-                btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-                btnEnviar.disabled = true;
-                
-                setTimeout(function() {
-                    btnEnviar.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
-                    btnEnviar.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
-                    
-                    setTimeout(function() {
-                        btnEnviar.textContent = originalText;
-                        btnEnviar.disabled = false;
-                        btnEnviar.style.background = 'linear-gradient(135deg, rgb(255, 69, 0) 0%, rgb(220, 50, 0) 100%)';
-                        contactForm.reset();
-                    }, 3000);
-                }, 2000);
-            });
-        });
+      // Efeito de revelação ao rolar a página
+      document.addEventListener("DOMContentLoaded", function () {
+        const profissionais = document.querySelectorAll(".profissional");
 
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        profissionais.forEach((profissional) => {
+          profissional.style.opacity = "0";
+          profissional.style.transform = "translateY(20px)";
+          profissional.style.transition =
+            "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(profissional);
+        });
+      });
+      //contatos//
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simulação de envio do formulário
+          const btnEnviar = contactForm.querySelector(".btn-enviar");
+          const originalText = btnEnviar.textContent;
+
+          btnEnviar.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+          btnEnviar.disabled = true;
+
+          setTimeout(function () {
+            btnEnviar.innerHTML =
+              '<i class="fas fa-check"></i> Mensagem Enviada!';
+            btnEnviar.style.background =
+              "linear-gradient(135deg, #4CAF50 0%, #45a049 100%)";
+
+            setTimeout(function () {
+              btnEnviar.textContent = originalText;
+              btnEnviar.disabled = false;
+              btnEnviar.style.background =
+                "linear-gradient(135deg, rgb(255, 69, 0) 0%, rgb(220, 50, 0) 100%)";
+              contactForm.reset();
+            }, 3000);
+          }, 2000);
+        });
+      });
     </script>
   </body>
 </html>
