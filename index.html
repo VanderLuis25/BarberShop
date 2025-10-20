@@ -572,6 +572,28 @@
           }, 5000);
         });
       });
+      // profissionais //
+              // Efeito de revelação ao rolar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const profissionais = document.querySelectorAll('.profissional');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            profissionais.forEach(profissional => {
+                profissional.style.opacity = '0';
+                profissional.style.transform = 'translateY(20px)';
+                profissional.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(profissional);
+            });
+        });
+
     </script>
   </body>
 </html>
