@@ -583,11 +583,14 @@
           }
         });
 
-        // Abrir menu mobile
+        // Abrir e Fechar menu mobile ao clicar no ícone
         btnMobile.addEventListener("click", function () {
-          this.classList.add("active");
-          menuMobile.classList.add("active");
-          document.body.style.overflow = "hidden";
+          this.classList.toggle("active");
+          menuMobile.classList.toggle("active");
+
+          // Trava ou libera o scroll da página
+          const isMenuOpen = menuMobile.classList.contains("active");
+          document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
         });
 
         // Fechar menu mobile

@@ -159,10 +159,10 @@ nav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 85%;
+  width: 50%;
   max-width: 380px;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(22, 33, 62, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(51, 23, 0, 0.98) 0%, rgba(78, 38, 0, 0.98) 100%);
   backdrop-filter: blur(20px);
   z-index: 999;
   display: flex;
@@ -311,11 +311,7 @@ nav {
   border-color: rgba(255, 69, 0, 0.4);
 }
 
-/* Botão Agendar no Mobile */
-.menu-agendar {
-  margin-top: 40px;
-  width: calc(100% - 40px);
-}
+
 
 .menu-agendar .agendar-btn {
   background: linear-gradient(135deg, rgb(255, 69, 0) 0%, rgb(220, 50, 0) 100%);
