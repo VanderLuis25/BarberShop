@@ -344,7 +344,7 @@ a button:active {
   max-width: 1200px;
   flex-direction: column;
   align-items: center;
-  margin: 40px auto;
+  margin: 60px auto;
   justify-content: center;
 }
 
@@ -389,8 +389,8 @@ a button:active {
 
 .container {
   width: 100%;
-  max-width: 800px;
-  height: 500px;
+  max-width: 650px;
+  height: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
@@ -551,16 +551,28 @@ a button:active {
   background: linear-gradient(90deg, rgb(61, 18, 1), #8b6914);
   border-radius: 2px;
 }
+.services-carousel-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 .services-container {
   width: 100%;
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 0 20px; /* Adiciona um respiro nas laterais */
+  gap: 25px;
+  justify-content: flex-start; /* Alinha os cards à esquerda */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab; /* Indica que a área é "arrastável" */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .service-card {
-  width: 280px;
+  width: 300px;
   height: auto;
   background-color: rgb(221, 221, 221);
   border-radius: 20px;
@@ -569,6 +581,7 @@ a button:active {
   box-shadow: 0 0 40px rgba(7, 3, 0, 0.808);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .service-card:hover {
@@ -578,7 +591,7 @@ a button:active {
 
 .service-card img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   border: none;
   border-radius: 10px 10px 0 0;
 }
@@ -632,86 +645,234 @@ a button:active {
   transform: scale(1.05); /* Aumenta um pouco o botão */
 }
 
-.barbeiros {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.barbeiro img {
-  width: 90px;
-  border-radius: 50%;
-  box-shadow: 0 0 45px #000000;
-  margin: 15px;
-}
-
+/*nossos barbeiros*/
 .profissionais {
-  background-color: #000000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  margin-top: 150px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.profissionais-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .profissionais h1 {
-  font-weight: 700;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
+  width: 100%;
   text-align: center;
-  color: #f1f0f0;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(255, 69, 0);
-  margin-top: 80px;
+  font-size: 3rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.profissionais h1::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(61, 18, 1), #8b6914);
+  border-radius: 2px;
+}
+
+.profissionais .subtitle {
+  font-size: 1.2em;
+  color: rgba(53, 50, 50, 0.8);
+  max-width: 700px;
+  line-height: 1.6;
+  margin-top: 20px;
+  font-weight: 500;
 }
 
 .barbeiros {
-  text-align: center;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
   width: 100%;
-  justify-content: space-around;
 }
 
 .profissional {
-  width: 300px;
-  height: 350px;
-  background-color: rgb(255, 69, 0);
-  border-radius: 20px;
-  margin: 20px;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
   border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 35px;
+}
+
+.profissional:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(95, 28, 4, 0.966);
+}
+
+.profissional-img {
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  position: relative;
 }
 
 .profissional img {
-  margin: 20px;
-  width: 200px;
-  box-shadow: 0 0 45px #000000;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profissional:hover img {
+  transform: scale(1.05);
+}
+
+.profissional-info {
+  padding: 20px;
+  text-align: center;
 }
 
 .profissional h4 {
-  font-weight: 500;
-  font-size: 30px;
-  text-align: center;
-  color: rgb(245, 245, 245);
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: rgb(24, 21, 21);
 }
 
 .profissional p {
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-  color: #f1f0f0;
+  color: rgba(43, 38, 38, 0.897);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 1em;
 }
 
+.especialidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.especialidade {
+  background: rgba(61, 17, 1, 0.2);
+  color: rgb(207, 82, 36);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.582);
+  transform: translateY(-3px);
+}
+
+.experiencia {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #8b6914;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.experiencia span:first-child {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.experiencia span:last-child {
+  font-size: 0.7em;
+}
+
+.agendar-btn {
+  background: linear-gradient(90deg, #d3af3b, #83620e);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(31, 29, 29, 0.459);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 40px auto 0;
+}
+
+.agendar-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(24, 23, 23, 0.5);
+}
+
+.agendar-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 1100px) {
+  .barbeiros {
+    gap: 30px;
+  }
+
+  .profissional {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .barbeiros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profissional {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .profissionais h1 {
+    font-size: 2.2em;
+  }
+}
+/*contatos*/
 .contato {
   margin-top: 180px;
   background-color: #000000;
