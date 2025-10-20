@@ -117,9 +117,9 @@ nav {
 
 .btn-mobile span {
   display: block;
-  width: 25px;
-  height: 3px;
-  background: white;
+  width: 40px;
+  height: 5px;
+  background: rgb(255, 255, 255);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -144,7 +144,7 @@ header.scrolled .btn-mobile span {
   position: fixed;
   top: 0;
   right: -100%; /* Começa fora da tela, à direita */
-  width: 100%;
+  width: 50%;
   max-width: 400px; /* Limita a largura em telas maiores */
   height: 100vh;
   background: rgba(20, 10, 5, 0.98);
