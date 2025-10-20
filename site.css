@@ -2,29 +2,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
+
+body {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
 /*header*/
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: rgba(255, 255, 255, 0);
   padding: 15px 40px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 2px solid rgba(255, 68, 0, 0);
-  backdrop-filter: blur(10px);
+  background: transparent;
   transition: all 0.3s ease;
 }
 
 header.scrolled {
   padding: 10px 35px;
-  background: rgba(66, 25, 6, 0.98);
+  background: rgba(20, 10, 5, 0.9);
+  backdrop-filter: blur(10px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -39,7 +44,6 @@ header.scrolled {
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.3s ease;
-  border: 2px solid rgba(255, 69, 0, 0.5);
 }
 
 header.scrolled .logo img {
@@ -101,28 +105,27 @@ nav {
 .btn-mobile {
   display: none;
   cursor: pointer;
-  background: rgba(255, 69, 0, 0.2);
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
   transition: all 0.3s ease;
-}
-
-.btn-mobile:hover {
-  background: rgba(255, 69, 0, 0.3);
+  z-index: 1001;
 }
 
 .btn-mobile span {
   display: block;
   width: 25px;
   height: 3px;
-  background: rgb(255, 69, 0);
+  background: white;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+header.scrolled .btn-mobile span {
+  background: rgb(255, 69, 0);
 }
 
 .btn-mobile.active span:nth-child(1) {
@@ -137,37 +140,40 @@ nav {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Começa fora da tela, à direita */
+  width: 100%;
+  max-width: 400px; /* Limita a largura em telas maiores */
+  height: 100vh;
+  background: rgba(20, 10, 5, 0.98);
+  backdrop-filter: blur(15px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1); /* Transição suave */
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
 .menu-mobile.active {
+  right: 0; /* Desliza para a posição visível */
+}
+
+/* Efeito de cascata para os itens do menu */
+.menu-mobile.active ul li {
   opacity: 1;
-  visibility: visible;
+  transform: translateX(0);
 }
 
 .menu-mobile ul {
   list-style: none;
   text-align: center;
+  padding: 0;
 }
 
-.menu-mobile ul li {
-  margin: 25px 0;
-}
-
-.menu-mobile {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(66, 28, 2, 0.822);
-  backdrop-filter: blur(10px);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-}
 .menu-mobile ul a {
   text-decoration: none;
   color: white;
@@ -175,6 +181,33 @@ nav {
   font-weight: 500;
   transition: all 0.3s ease;
   display: inline-block;
+}
+
+.menu-mobile ul li {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Atraso para cada item, criando o efeito de cascata */
+.menu-mobile.active li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.menu-mobile.active li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.menu-mobile.active li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.menu-mobile.active li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.menu-mobile.active li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.menu-mobile.active li:nth-child(6) {
+  transition-delay: 0.6s;
 }
 
 .menu-mobile ul a:hover {
@@ -204,63 +237,6 @@ nav {
   transform: rotate(90deg);
 }
 
-/* Conteúdo de exemplo para testar o scroll */
-.content {
-  margin-top: 150px;
-  padding: 50px;
-  text-align: center;
-}
-
-.content h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.content p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto 30px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-  header {
-    padding: 15px 30px;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .btn-mobile {
-    display: flex;
-  }
-
-  .agendar-btn {
-    display: none;
-  }
-}
-
-@media (max-width: 576px) {
-  header {
-    padding: 12px 20px;
-  }
-
-  .logo-text h1 {
-    font-size: 1.2em;
-  }
-
-  .logo-text p {
-    font-size: 0.7em;
-  }
-
-  .logo img {
-    width: 50px;
-    height: 50px;
-  }
-}
 .inicio {
   width: 100%;
   height: 100vh;
@@ -301,14 +277,13 @@ nav {
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  background-color: rgb(97, 31, 5);
 }
-a button:hover {
+.inicio a button:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 25px rgb(0, 0, 0);
 }
 
-a button:active {
+.inicio a button:active {
   background-color: rgb(61, 18, 1);
   transform: 3s;
   color: #080808;
@@ -324,7 +299,7 @@ a button:active {
   gap: 30px;
   align-items: center;
   justify-content: center;
-  background-color: #dfdcdc7e;
+  background-color: #ffffff;
   overflow-x: hidden; /* Previne a barra de rolagem horizontal durante a animação */
 }
 
@@ -347,7 +322,7 @@ a button:active {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, rgb(61, 18, 1), #8b6914);
+  background: linear-gradient(90deg, #d3af3b, #83620e);
   border-radius: 2px;
 }
 
@@ -392,7 +367,7 @@ a button:active {
 .destaque {
   background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
   padding: 25px;
-  border-left: 4px solid rgb(61, 18, 1);
+  border-left: 4px solid #d3af3b;
   margin: 30px 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   border-radius: 0 8px 8px 0;
@@ -424,14 +399,14 @@ a button:active {
 }
 
 .imagem-sobre-nos img:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .selo {
   position: absolute;
   bottom: -20px;
-  right: 20px;
+  right: -20px;
   background: linear-gradient(135deg, #d3af3b, rgba(0, 0, 0, 0.2));
   color: white;
   padding: 15px;
@@ -483,7 +458,7 @@ a button:active {
   min-width: 200px;
   text-align: center;
   padding: 25px 15px;
-  background: rgb(255, 255, 255);
+  background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -496,6 +471,7 @@ a button:active {
 
 .valor i {
   font-size: 2.5rem;
+  color: #d3af3b;
   margin-bottom: 15px;
 }
 
@@ -510,27 +486,6 @@ a button:active {
   color: #666;
   text-align: center;
 }
-
-@media (max-width: 768px) {
-  .sobre-nos {
-    padding: 50px 20px;
-  }
-
-  .sobre-nos h1 {
-    font-size: 2.2rem;
-  }
-
-  .selo {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    margin: 20px auto;
-  }
-
-  .valores {
-    margin-top: 40px;
-  }
-}
 /*galeria*/
 
 .galeria {
@@ -539,8 +494,9 @@ a button:active {
   max-width: 1200px;
   flex-direction: column;
   align-items: center;
-  margin: 60px auto;
+  margin: 0 auto;
   justify-content: center;
+  padding: 80px 20px;
 }
 
 .galeria-header {
@@ -567,10 +523,10 @@ a button:active {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
+  width: 100px;
   height: 4px;
   border-radius: 2px;
-  background: linear-gradient(90deg, rgb(68, 23, 5), #ac831c);
+  background: linear-gradient(90deg, #d3af3b, #83620e);
 }
 
 .galeria p {
@@ -589,7 +545,7 @@ a button:active {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
@@ -616,8 +572,8 @@ a button:active {
 }
 
 .control-btn {
-  background: rgba(255, 69, 0, 0.2);
-  border: 2px solid rgb(255, 69, 0);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
   color: white;
   width: 50px;
   height: 50px;
@@ -631,7 +587,7 @@ a button:active {
 }
 
 .control-btn:hover {
-  background: rgba(255, 69, 0, 0.4);
+  background: #d3af3b;
   transform: scale(1.05);
 }
 
@@ -645,13 +601,13 @@ a button:active {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background: rgb(255, 69, 0);
+  background: #d3af3b;
   transform: scale(1.2);
 }
 
@@ -665,8 +621,8 @@ a button:active {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, rgb(255, 69, 0) 0%, rgb(220, 50, 0) 100%);
-  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+  background: linear-gradient(135deg, #d3af3b 0%, #83620e 100%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -676,12 +632,12 @@ a button:active {
 
 .galeria button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .galeria button:active {
   transform: translateY(1px);
-  box-shadow: 0 3px 10px rgba(255, 69, 0, 0.4);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .galeria button::after {
@@ -694,25 +650,6 @@ a button:active {
   transform: translateX(5px);
 }
 
-@media (max-width: 768px) {
-  .container {
-    height: 400px;
-  }
-
-  .galeria h1 {
-    font-size: 2.2em;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    height: 300px;
-  }
-
-  .galeria h1 {
-    font-size: 1.8em;
-  }
-}
 /* seção  Nossos Serviços*/
 .services-section {
   max-width: 100%;
@@ -741,9 +678,9 @@ a button:active {
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
+  width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, rgb(61, 18, 1), #8b6914);
+  background: linear-gradient(90deg, #d3af3b, #83620e);
   border-radius: 2px;
 }
 .services-carousel-wrapper {
@@ -769,11 +706,11 @@ a button:active {
 .service-card {
   width: 300px;
   height: auto;
-  background-color: rgb(221, 221, 221);
+  background-color: #ffffff;
   border-radius: 20px;
   margin: 20px;
   align-items: center;
-  box-shadow: 0 0 40px rgba(7, 3, 0, 0.808);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   flex-shrink: 0;
@@ -1345,6 +1282,10 @@ footer p {
   .menu {
     display: none;
   }
+  .menu-mobile {
+    display: flex;
+  }
+
   .btn-mobile {
     display: flex;
   }
@@ -1368,6 +1309,24 @@ footer p {
     font-size: 2.5rem;
   }
 
+  .sobre-nos {
+    padding: 50px 20px;
+  }
+
+  .sobre-nos h1 {
+    font-size: 2.2rem;
+  }
+
+  .selo {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin: 20px auto;
+  }
+
+  .valores {
+    margin-top: 40px;
+  }
   .barbeiros {
     flex-direction: column;
     align-items: center;
@@ -1382,6 +1341,14 @@ footer p {
   .contato-container {
     flex-direction: column;
     gap: 30px;
+  }
+  .info-contato,
+  .form-contato {
+    width: 100%;
+  }
+
+  .contato h1 {
+    font-size: 2.2em;
   }
 }
 
@@ -1428,5 +1395,13 @@ footer p {
 
   .container {
     height: 300px; /* Ajusta a altura da galeria */
+  }
+
+  .galeria h1 {
+    font-size: 1.8em;
+  }
+
+  .profissional {
+    width: 100%;
   }
 }
