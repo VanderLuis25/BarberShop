@@ -735,14 +735,11 @@ nav {
   justify-content: center;
   cursor: pointer;
   font-size: 1.2em;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   pointer-events: auto;
-  opacity: 0;
+  opacity: 1; /* Garante que os botões estejam sempre visíveis */
 }
 
-.container:hover .control-btn {
-  opacity: 1;
-}
 
 .control-btn:hover {
   background: #d3af3b;

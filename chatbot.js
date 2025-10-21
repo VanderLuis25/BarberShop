@@ -22,7 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Evento de clique para fechar a janela do chatbot pelo botão 'X'
   chatbotCloseButton.addEventListener("click", () => {
-    // Primeiro, fecha a janela removendo a classe 'open'
+    console.log("Chatbot close button clicked.");
+    console.log("Before closing - classList:", chatbotWindow.classList);
+
+    // Remove a classe 'open' para acionar a transição CSS de fechamento.
+    // Definimos também as propriedades de estilo diretamente para garantir que a janela se esconda,
+    // caso haja alguma especificidade CSS que impeça a transição baseada apenas na classe.
+    chatbotWindow.style.opacity = "0";
+    chatbotWindow.style.visibility = "hidden";
     chatbotWindow.classList.remove("open");
 
     // Aguarda a animação de fechamento (300ms) para então limpar a conversa
@@ -34,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Olá! Eu sou o Barbershop, seu assistente virtual. Em que posso ajudar?",
         "bot"
       );
-    }, 300);
+      console.log("Chatbot messages cleared and reset.");
+    }, 300); // O atraso de 300ms corresponde à duração da transição CSS
   });
 
   // Evento de clique no botão "Enviar"
