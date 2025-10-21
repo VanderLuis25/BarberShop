@@ -222,11 +222,47 @@
 
       <div class="container">
         <div class="slide">
-          <img src="" alt="Projeto de Design 1" />
-          <img src="" alt="Projeto de Design 2" />
-          <img src="" alt="Projeto de Design 3" />
-          <img src="" alt="Projeto de Design 4" />
-          <img src="" alt="Projeto de Design 5" />
+          <img src="/assets/img-galeria/infantil1.png" />
+          <img src="/assets/img-galeria/infantil2.png" />
+          <img src="/assets/img-galeria/infantil3.png" />
+          <img src="/assets/img-galeria/infantil4.png" />
+          <img src="/assets/img-galeria/infantil5.png" />
+          <img src="/assets/img-galeria/infantil6.png" />
+          <img src="/assets/img-galeria/infantil7.png" />
+          <img src="/assets/img-galeria/infantil8.png" />
+          <img src="/assets/img-galeria/infantil9.png" />
+          <img src="/assets/img-galeria/infantil10.png" />
+          <img src="/assets/img-galeria/infantil11.png" />
+          <img src="/assets/img-galeria/infantil12.png" />
+          <img src="/assets/img-galeria/infantil01.png" />
+          <img src="/assets/img-galeria/cabelo-franja.png" />
+          <img src="/assets/img-galeria/cabelo1.png" alt="" />
+          <img src="/assets/img-galeria/cabelo2.png" alt="" />
+          <img src="/assets/img-galeria/cabelo3.png" alt="" />
+          <img src="/assets/img-galeria/cabelo4.png" alt="" />
+          <img src="/assets/img-galeria/cabelo5.png" alt="" />
+          <img src="/assets/img-galeria/cabelo6.png" alt="" />
+          <img src="/assets/img-galeria/cabelo7.png" alt="" />
+          <img src="/assets/img-galeria/cabelo8.png" alt="" />
+          <img src="/assets/img-galeria/barba.png" alt="" />
+          <img src="/assets/img-galeria/barba1.png" alt="" />
+          <img src="/assets/img-galeria/barba10.png" alt="" />
+          <img src="/assets/img-galeria/barba11.png" alt="" />
+          <img src="/assets/img-galeria/barba12.png" alt="" />
+          <img src="/assets/img-galeria/barba13.png" alt="" />
+          <img src="/assets/img-galeria/barba14.png" alt="" />
+          <img src="/assets/img-galeria/barba3.png" alt="" />
+          <img src="/assets/img-galeria/barba4.png" alt="" />
+          <img src="/assets/img-galeria/barba5.png" alt="" />
+          <img src="/assets/img-galeria/barba6.png" alt="" />
+          <img src="/assets/img-galeria/barba7.png" alt="" />
+          <img src="/assets/img-galeria/barba8.png" alt="" />
+          <img src="/assets/img-galeria/barba9.png" alt="" />
+          <img src="/assets/img-galeria/barba.png" alt="" />
+          <img src="/assets/img-galeria/11.png" alt="" />
+          <img src="/assets/img-galeria/10.png" alt="" />
+          <img src="/assets/img-galeria/12.png" alt="" />
+          <img src="/assets/img-galeria/16.png" alt="" />
         </div>
       </div>
 
@@ -672,6 +708,7 @@
       });
 
       //ação da galeria//
+
       document.addEventListener("DOMContentLoaded", function () {
         const slide = document.querySelector(".slide");
         const images = document.querySelectorAll(".slide img");
@@ -680,36 +717,54 @@
         const indicators = document.querySelectorAll(".indicator");
 
         let currentIndex = 0;
+        let autoPlayInterval;
         const totalImages = images.length;
+        const imagesPerView = 1; // Quantas imagens mostrar por vez
 
-        // Configurar largura do slide
-        slide.style.width = `${totalImages * 100}%`;
+        // Configurar largura do slide baseado no número de imagens
+        slide.style.width = `${(totalImages / imagesPerView) * 100}%`;
 
         // Função para atualizar a posição do slide
         function updateSlidePosition() {
-          slide.style.transform = `translateX(-${
-            currentIndex * (100 / totalImages)
-          }%)`;
+          const translateX =
+            -currentIndex * (100 / (totalImages / imagesPerView));
+          slide.style.transform = `translateX(${translateX}%)`;
 
           // Atualizar indicadores
           indicators.forEach((indicator, index) => {
-            if (index === currentIndex) {
-              indicator.classList.add("active");
-            } else {
-              indicator.classList.remove("active");
-            }
+            indicator.classList.toggle("active", index === currentIndex);
           });
         }
 
-        // Event listeners para os botões
-        prevBtn.addEventListener("click", function () {
-          currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
+        // Função para próxima imagem
+        function nextSlide() {
+          currentIndex =
+            currentIndex < Math.ceil(totalImages / imagesPerView) - 1
+              ? currentIndex + 1
+              : 0;
           updateSlidePosition();
+        }
+
+        // Função para imagem anterior
+        function prevSlide() {
+          currentIndex =
+            currentIndex > 0
+              ? currentIndex - 1
+              : Math.ceil(totalImages / imagesPerView) - 1;
+          updateSlidePosition();
+        }
+
+        // Event listeners para os botões
+        prevBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          prevSlide();
+          resetAutoPlay();
         });
 
-        nextBtn.addEventListener("click", function () {
-          currentIndex = currentIndex < totalImages - 1 ? currentIndex + 1 : 0;
-          updateSlidePosition();
+        nextBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          nextSlide();
+          resetAutoPlay();
         });
 
         // Event listeners para os indicadores
@@ -717,29 +772,54 @@
           indicator.addEventListener("click", function () {
             currentIndex = index;
             updateSlidePosition();
+            resetAutoPlay();
           });
         });
 
-        // Auto-play (opcional)
-        let autoPlayInterval = setInterval(function () {
-          currentIndex = currentIndex < totalImages - 1 ? currentIndex + 1 : 0;
-          updateSlidePosition();
-        }, 5000);
+        // Auto-play
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(nextSlide, 4000); // Muda a cada 4 segundos
+        }
+
+        function resetAutoPlay() {
+          clearInterval(autoPlayInterval);
+          startAutoPlay();
+        }
 
         // Pausar auto-play ao interagir
-        const galleryContainer = document.querySelector(".container");
-        galleryContainer.addEventListener("mouseenter", function () {
+        const container = document.querySelector(".container");
+
+        container.addEventListener("mouseenter", function () {
           clearInterval(autoPlayInterval);
         });
 
-        galleryContainer.addEventListener("mouseleave", function () {
-          autoPlayInterval = setInterval(function () {
-            currentIndex =
-              currentIndex < totalImages - 1 ? currentIndex + 1 : 0;
-            updateSlidePosition();
-          }, 5000);
+        container.addEventListener("mouseleave", function () {
+          startAutoPlay();
         });
+
+        // Iniciar auto-play
+        startAutoPlay();
+
+        // Inicializar
+        updateSlidePosition();
+
+        // Criar indicadores dinamicamente baseado no número de imagens
+        const indicatorsContainer = document.querySelector(".indicators");
+        indicatorsContainer.innerHTML = "";
+
+        const totalSlides = Math.ceil(totalImages / imagesPerView);
+        for (let i = 0; i < totalSlides; i++) {
+          const indicator = document.createElement("div");
+          indicator.className = `indicator ${i === 0 ? "active" : ""}`;
+          indicator.addEventListener("click", function () {
+            currentIndex = i;
+            updateSlidePosition();
+            resetAutoPlay();
+          });
+          indicatorsContainer.appendChild(indicator);
+        }
       });
+
       // profissionais //
       // Efeito de revelação ao rolar a página
       document.addEventListener("DOMContentLoaded", function () {
