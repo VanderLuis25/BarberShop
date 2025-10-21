@@ -162,7 +162,11 @@ nav {
   width: 50%;
   max-width: 380px;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(51, 23, 0, 0.98) 0%, rgba(78, 38, 0, 0.98) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(51, 23, 0, 0.98) 0%,
+    rgba(78, 38, 0, 0.98) 100%
+  );
   backdrop-filter: blur(20px);
   z-index: 999;
   display: flex;
@@ -231,12 +235,24 @@ nav {
 }
 
 /* Efeito de cascata suave */
-.menu-mobile.active li:nth-child(1) { transition-delay: 0.1s; }
-.menu-mobile.active li:nth-child(2) { transition-delay: 0.15s; }
-.menu-mobile.active li:nth-child(3) { transition-delay: 0.2s; }
-.menu-mobile.active li:nth-child(4) { transition-delay: 0.25s; }
-.menu-mobile.active li:nth-child(5) { transition-delay: 0.3s; }
-.menu-mobile.active li:nth-child(6) { transition-delay: 0.35s; }
+.menu-mobile.active li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.menu-mobile.active li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.menu-mobile.active li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.menu-mobile.active li:nth-child(4) {
+  transition-delay: 0.25s;
+}
+.menu-mobile.active li:nth-child(5) {
+  transition-delay: 0.3s;
+}
+.menu-mobile.active li:nth-child(6) {
+  transition-delay: 0.35s;
+}
 
 .menu-mobile ul a {
   text-decoration: none;
@@ -252,7 +268,7 @@ nav {
 }
 
 .menu-mobile ul a::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -40px;
   top: 50%;
@@ -311,8 +327,6 @@ nav {
   border-color: rgba(255, 69, 0, 0.4);
 }
 
-
-
 .menu-agendar .agendar-btn {
   background: linear-gradient(135deg, rgb(255, 69, 0) 0%, rgb(220, 50, 0) 100%);
   color: white;
@@ -363,16 +377,16 @@ nav {
     max-width: none;
     padding-left: 30px;
   }
-  
+
   .menu-header {
     padding: 25px 30px;
   }
-  
+
   .close-mobile {
     top: 20px;
     right: 20px;
   }
-  
+
   .menu-mobile ul a {
     font-size: 1.2em;
   }
@@ -715,18 +729,19 @@ nav {
   top: 50%;
   left: 0;
   right: 0;
-  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   padding: 0 15px;
-  pointer-events: none;
-  z-index: 10;
+  /* pointer-events: none; Removido para garantir que os botões sejam interativos */
+  z-index: 11; /* Aumentado para garantir que fique sobre as imagens */
+  height: 100%; /* Garante que o contêiner dos controles ocupe toda a altura */
+  align-items: center; /* Centraliza os botões verticalmente */
 }
 
 .control-btn {
   background: rgba(0, 0, 0, 0.5);
   border: none;
-  color: white;
+  color: white; /* Alterado para branco para melhor visibilidade */
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -736,10 +751,9 @@ nav {
   cursor: pointer;
   font-size: 1.2em;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  pointer-events: auto;
-  opacity: 1; /* Garante que os botões estejam sempre visíveis */
+  pointer-events: auto; /* Garante que os botões sejam clicáveis */
+  animation: button-blink 2s infinite ease-in-out; /* Adiciona o efeito piscante */
 }
-
 
 .control-btn:hover {
   background: #d3af3b;
@@ -749,7 +763,6 @@ nav {
 .galeria a {
   text-decoration: none; /* Remove o sublinhado do link */
 }
-
 
 .galeria button {
   margin: 20px 0;
@@ -768,7 +781,6 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  
 }
 
 .galeria button:hover {
@@ -797,18 +809,31 @@ nav {
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Animação para o efeito piscante dos botões do slide */
+@keyframes button-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .container {
     max-width: 500px;
     height: 350px;
   }
-  
+
   .slide img {
     width: 500px;
     height: 100%;
   }
-  
+
   .galeria h1 {
     font-size: 2.5rem;
   }
@@ -819,16 +844,16 @@ nav {
     max-width: 350px;
     height: 250px;
   }
-  
+
   .slide img {
     width: 350px;
     height: 100%;
   }
-  
+
   .galeria h1 {
     font-size: 2rem;
   }
-  
+
   .control-btn {
     width: 40px;
     height: 40px;
