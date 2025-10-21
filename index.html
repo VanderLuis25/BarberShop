@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="site.css" />
 
     <link
@@ -11,6 +12,7 @@
       type="image/x-icon"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="chatbot.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -222,20 +224,20 @@
 
       <div class="container">
         <div class="slide">
-          <img src="/assets/img-galeria/infantil1.png" alt="1"/>
-          <img src="/assets/img-galeria/infantil.png" alt="2"/>
-          <img src="/assets/img-galeria/infantil3.png" alt="3"/>
-          <img src="/assets/img-galeria/infantil01.png"alt="4" />
-          <img src="/assets/img-galeria/infantil5.png" alt="5"/>
-          <img src="/assets/img-galeria/infantil6.png" alt="6"/>
-          <img src="/assets/img-galeria/infantil7.png"alt="7" />
-          <img src="/assets/img-galeria/infantil8.png" alt="8"/>
-          <img src="/assets/img-galeria/infantil9.png" alt="9"/>
-          <img src="/assets/img-galeria/infantil10.png"alt="10" />
-          <img src="/assets/img-galeria/infantil11.png"alt="11"/>
-        
-          <img src="/assets/img-galeria/infantil01.png" alt="13"/>
-          <img src="/assets/img-galeria/cabelo-franja.png" alt="14"/>
+          <img src="/assets/img-galeria/infantil1.png" alt="1" />
+          <img src="/assets/img-galeria/infantil.png" alt="2" />
+          <img src="/assets/img-galeria/infantil3.png" alt="3" />
+          <img src="/assets/img-galeria/infantil01.png" alt="4" />
+          <img src="/assets/img-galeria/infantil5.png" alt="5" />
+          <img src="/assets/img-galeria/infantil6.png" alt="6" />
+          <img src="/assets/img-galeria/infantil7.png" alt="7" />
+          <img src="/assets/img-galeria/infantil8.png" alt="8" />
+          <img src="/assets/img-galeria/infantil9.png" alt="9" />
+          <img src="/assets/img-galeria/infantil10.png" alt="10" />
+          <img src="/assets/img-galeria/infantil11.png" alt="11" />
+
+          <img src="/assets/img-galeria/infantil01.png" alt="13" />
+          <img src="/assets/img-galeria/cabelo-franja.png" alt="14" />
           <img src="/assets/img-galeria/cabelo1.png" alt="15" />
           <img src="/assets/img-galeria/cabelo2.png" alt="16" />
           <img src="/assets/img-galeria/cabelo3.png" alt="17" />
@@ -263,7 +265,7 @@
           <img src="/assets/img-galeria/10.png" alt="39" />
           <img src="/assets/img-galeria/12.png" alt="40" />
           <img src="/assets/img-galeria/16.png" alt="41" />
-           <img src="/assets/img-galeria/infantil1.png" alt="1"/>
+          <img src="/assets/img-galeria/infantil1.png" alt="1" />
         </div>
       </div>
 
@@ -271,7 +273,6 @@
         <div class="control-btn prev">❮</div>
         <div class="control-btn next">❯</div>
       </div>
-
 
       <a href="/site/galeria.html">
         <button>Ver Mais Fotos</button>
@@ -585,6 +586,33 @@
       </div>
     </section>
 
+    <!-- ==========================================================================
+       CHATBOT
+       ========================================================================== -->
+    <!-- Botão flutuante para abrir o chatbot -->
+    <button id="chatbotToggleButton" class="chatbot-toggle-button">💬</button>
+
+    <!-- Janela do Chatbot -->
+    <div id="chatbotWindow" class="chatbot-window">
+      <div class="chatbot-header">
+        <img
+          src="/assets/logo/LOGO-3.png"
+          alt="Chatbot Avatar"
+          class="chatbot-avatar"
+        />
+        <span>Barbershop</span>
+        <button id="chatbotCloseButton" class="close-btn">&times;</button>
+      </div>
+      <div id="chatbotMessages" class="chatbot-messages"></div>
+      <div class="chatbot-input-container">
+        <input
+          type="text"
+          id="chatbotInput"
+          placeholder="Digite sua mensagem..."
+        />
+        <button id="chatbotSendButton">Enviar</button>
+      </div>
+    </div>
     <script aria-keyshortcuts="3d7ce8ab-4438-435e-b9a6-9a3688a6d5bd"></script>
     <script
       type="module"
@@ -725,6 +753,12 @@
           slide.style.transform = `translateX(${translateX}%)`;
 
           // Atualizar indicadores
+          images.forEach((img, index) => {
+            img.classList.remove("active");
+            if (index === currentIndex) {
+              img.classList.add("active");
+            }
+          });
           indicators.forEach((indicator, index) => {
             indicator.classList.toggle("active", index === currentIndex);
           });
@@ -871,5 +905,6 @@
         });
       });
     </script>
+    <script src="chatbot.js"></script>
   </body>
 </html>

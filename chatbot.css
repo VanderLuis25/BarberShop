@@ -1,0 +1,249 @@
+/* Estilização do Chatbot */
+
+/* Botão flutuante para abrir o chat */
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px; /* Mantém o tamanho */
+  background: linear-gradient(
+    135deg,
+    #ebc6a8cc 0%,
+    #773108 50%
+  ); /* Consistente com o tema do site */
+  color: white;
+  border: none; /* Sem borda */
+  border-radius: 50%;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+  animation: pulsing-shadow 2.5s infinite; /* Animação de pulsação */
+}
+
+.chatbot-toggle-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada no hover */
+}
+
+/* Janela principal do chatbot */
+.chatbot-window {
+  position: fixed;
+  bottom: 100px; /* Acima do botão */
+  right: 30px;
+  width: 350px;
+  height: 450px; /* Altura padrão */
+  background-color: #f9f9f9;
+  border-radius: 12px; /* Bordas mais suaves */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  transform: translateY(100%) scale(0.8); /* Começa escondido e menor */
+  opacity: 0; /* Totalmente transparente */
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+  border: 1px solid #e0e0e0; /* Borda sutil para um visual mais moderno */
+}
+
+.chatbot-window.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Cabeçalho da janela do chat */
+.chatbot-header {
+  background: linear-gradient(140deg, #ffdf76 0%, #632b06 100%);
+  color: white;
+  padding: 15px;
+  font-size: 1.1em; /* Tamanho da fonte */
+  font-weight: 600;
+  border-top-left-radius: 11px; /* Acompanha o border-radius da janela */
+  border-top-right-radius: 11px; /* Acompanha o border-radius da janela */
+  display: flex;
+  align-items: center; /* Alinha verticalmente o avatar e o texto */
+  gap: 10px; /* Espaçamento entre o avatar e o título */
+  justify-content: space-between;
+}
+
+/* Estilo para o avatar do chatbot */
+.chatbot-avatar {
+  width: 36px; /* Tamanho do avatar */
+  height: 36px;
+  border-radius: 50%; /* Formato circular */
+  object-fit: cover; /* Garante que a imagem preencha o espaço */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Fundo para o caso de imagem não carregar */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Borda sutil */
+}
+
+.chatbot-header .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chatbot-header .close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Área das mensagens */
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatbot-message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Mensagem do usuário */
+.chatbot-message.user {
+  align-self: flex-end;
+  background-color: #6e2f0a;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+/* Mensagem do bot */
+.chatbot-message.bot {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 5px;
+}
+/* Animação para novas mensagens */
+.chatbot-message {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Área de entrada de texto */
+.chatbot-input-container {
+  display: flex;
+  padding: 10px 15px;
+  border-top: 1px solid #e0e0e0; /* Borda superior mais suave */
+  background-color: #f9f9f9;
+}
+
+.chatbot-input-container input {
+  flex-grow: 1;
+  border: 1px solid #ccc; /* Borda mais suave */
+  border-radius: 18px; /* Bordas mais arredondadas */
+  padding: 10px 15px; /* Ajuste de padding */
+  font-size: 0.95em;
+  margin-right: 10px;
+}
+
+.chatbot-input-container button {
+  background: linear-gradient(135deg, #d3af3b 0%, #83620e 100%);
+  color: white; /* Cor do texto */
+  border: none; /* Sem borda */
+  border-radius: 18px; /* Bordas mais arredondadas */
+  padding: 10px 15px; /* Ajuste de padding */
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.2s ease;
+}
+
+.chatbot-input-container button:hover {
+  background: linear-gradient(135deg, #e0c05e 0%, #9e7a12 100%);
+}
+
+/* Indicador de "digitando" */
+.chatbot-message.bot.typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+}
+
+.typing-dot {
+  width: 8px; /* Tamanho do ponto */
+  height: 8px; /* Tamanho do ponto */
+  background-color: #aaa; /* Cor um pouco mais escura */
+  border-radius: 50%;
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Ajustes para telas menores (responsividade) */
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100% - 30px); /* Ocupa mais largura em telas pequenas */
+    right: 15px; /* Posição mais próxima da borda */
+    bottom: 70px; /* Posição acima do botão */
+    height: 380px; /* Altura ajustada */
+  }
+
+  .chatbot-toggle-button {
+    bottom: 15px; /* Posição mais próxima da borda */
+    right: 15px; /* Posição mais próxima da borda */
+    width: 55px; /* Tamanho ligeiramente maior */
+    height: 55px; /* Tamanho ligeiramente maior */
+    font-size: 1.6em; /* Tamanho do ícone */
+  }
+}
+
+/* Animação de sombra pulsante para o botão do chatbot */
+@keyframes pulsing-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(211, 175, 59, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(211, 175, 59, 0); /* Expansão um pouco maior */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(211, 175, 59, 0);
+  }
+}

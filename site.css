@@ -750,7 +750,7 @@ nav {
 }
 
 .galeria a {
-  text-decoration: none;
+  text-decoration: none; /* Remove o sublinhado do link */
 }
 
 
@@ -771,6 +771,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  
 }
 
 .galeria button:hover {
@@ -793,6 +794,12 @@ nav {
   transform: translateX(5px);
 }
 
+/* Efeito de zoom para a imagem ativa no carrossel */
+.slide img.active {
+  transform: scale(1.05);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .container {
@@ -802,7 +809,7 @@ nav {
   
   .slide img {
     width: 500px;
-    height: 350px;
+    height: 100%;
   }
   
   .galeria h1 {
@@ -818,7 +825,7 @@ nav {
   
   .slide img {
     width: 350px;
-    height: 250px;
+    height: 100%;
   }
   
   .galeria h1 {
