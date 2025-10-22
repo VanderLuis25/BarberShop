@@ -370,40 +370,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const phoneNumber = barberPhones[selectedBarber];
-    if (phoneNumber) {
-      const selectedServiceText =
-        cutTypeSelect.options[cutTypeSelect.selectedIndex].text;
-      const message = `Olá, ${selectedBarber}! Gostaria de agendar um serviço, *${selectedServiceText}* para ${date} às ${time}. Cliente: *${clientName}*.`;
-      const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-        message
-      )}`;
+    const selectedServiceText =
+      cutTypeSelect.options[cutTypeSelect.selectedIndex].text;
 
-      saveAppointment(
-        selectedBarber,
-        clientName,
-        selectedServiceText,
-        date,
-        time
-      );
-      displayMessage(
-        "Agendamento realizado! Redirecionando para o WhatsApp do barbeiro...",
-        "success"
-      );
+    // Salva o agendamento no localStorage
+    saveAppointment(
+      selectedBarber,
+      clientName,
+      selectedServiceText,
+      date,
+      time
+    );
 
-      setTimeout(() => {
-        window.open(whatsappLink, "_blank");
-      }, 1000);
+    // Exibe a mensagem de sucesso
+    displayMessage(
+      "Agendado com sucesso! Você será redirecionado em breve.",
+      "success"
+    );
 
-      clientNameInput.value = "";
-      barberSelect.value = "";
-      cutTypeSelect.value = "";
-      dateInput.value = "";
-      timeSelect.innerHTML =
-        '<option value="">-- Selecione uma Hora --</option>';
-    } else {
-      displayMessage("Número de WhatsApp do barbeiro não encontrado.", "error");
-    }
+    // Redireciona para a página principal após 3 segundos
+    setTimeout(() => {
+      window.location.href = "../../index.html";
+    }, 3000);
   });
 
   // Event listener para o botão de "Ver Todos os Agendamentos" na tela principal
