@@ -1,4 +1,4 @@
-<h1> Barbershop</h1>
+<h1> Barbershop-New</h1>
 <h2> Projeto pessoal-barbearia</h2>
 
 ## Table of contents
@@ -15,7 +15,7 @@ Desde que comecei meus estudos no curso DevClub, tive a oportunidade de mergulha
 
 Eu me dediquei a cada detalhe, desde a estruturação do conteúdo com HTML, passando pela estilização e responsividade impecável com CSS, até a implementação de funcionalidades interativas com JavaScript. Cada linha de código foi um aprendizado, e cada desafio superado me deu mais confiança.
 
-O Barbershop Edi Rodrigues não é apenas um site; é a materialização do meu esforço e do conhecimento que adquiri no DevClub. Ele representa um passo importante na minha jornada como desenvolvedor, e estou muito orgulhoso do resultado final. Mal posso esperar para aplicar o que aprendi em futuros projetos!
+O Barbershop-New não é apenas um site; é a materialização do meu esforço e do conhecimento que adquiri no DevClub. Ele representa um passo importante na minha jornada como desenvolvedor, e estou muito orgulhoso do resultado final. Mal posso esperar para aplicar o que aprendi em futuros projetos!
 
 ## Screenshot
 ![](./img/macbo.png)
