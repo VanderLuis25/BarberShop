@@ -145,15 +145,15 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       const BARBER_SCHEDULES = {
-        Edi: {
+        "João Silva": {
           week: { start: "13:00", end: "19:00" },
           saturday: { start: "08:00", end: "15:00" },
         },
-        Gui: {
+        "Pedro Santos": {
           week: { start: "15:00", end: "21:00" },
           saturday: { start: "08:00", end: "15:00" },
         },
-        Joao: {
+        "Rafaela Costa": {
           week: { start: "09:00", end: "21:00" },
           saturday: { start: "08:00", end: "15:00" },
         },
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (day === 0 || day === 1) return false; // Fechado Domingo e Segunda
 
       let schedule = BARBER_SCHEDULES[barber][day === 6 ? "saturday" : "week"];
-      if (barber === "Joao" && joaoSpecificSchedules[dateStr]) {
+      if (barber === "Rafaela Costa" && joaoSpecificSchedules[dateStr]) {
         schedule = joaoSpecificSchedules[dateStr];
       }
 
@@ -280,13 +280,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       const today = new Date().toISOString().split("T")[0];
       const barbers = [
-        { name: "João Silva", id: "Joao" },
-        { name: "Pedro Santos", id: "Gui" },
-        { name: "Rafaela Costa", id: "Edi" }, // Assumindo que Rafaela é Edi no sistema
+        { name: "João Silva", id: "João Silva" },
+        { name: "Pedro Santos", id: "Pedro Santos" },
+        { name: "Rafaela Costa", id: "Rafaela Costa" },
       ];
       let availableBarbers = [];
       barbers.forEach((barber) => {
-        if (checkBarberAvailability(barber.id, today)) {
+        if (checkBarberAvailability(barber.name, today)) {
           availableBarbers.push(barber.name);
         }
       });
