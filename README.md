@@ -1,4 +1,4 @@
-<h1> Barbershop Edi Rodrigues</h1>
+<h1> Barbershop</h1>
 <h2> Projeto pessoal-barbearia</h2>
 
 ## Table of contents
