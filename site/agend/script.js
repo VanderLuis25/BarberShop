@@ -36,21 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dados dos barbeiros e horários
     const barberPhones = {
-        'Edi': '5511952511928',
-        'Gui': '5511952511928',
-        'Joao': '5511952511928'
+        'João Silva': '5511952511928',
+        'Pedro Santos': '5511952511928',
+        'Rafaela Costa': '5511952511928'
     };
 
     const BARBER_SCHEDULES = {
-        'Edi': {
+        'João Silva': {
             week: { start: '13:00', end: '19:00' }, // Terça a sexta
             saturday: { start: '08:00', end: '15:00' }
         },
-        'Gui': {
+        'Pedro Santos': {
             week: { start: '15:00', end: '21:00' }, // Terça a sexta
             saturday: { start: '08:00', end: '15:00' }
         },
-        'Joao': {
+        'Rafaela Costa': {
             // João tem horário alternativo que ele define, mas aqui é um fallback/default
             week: { start: '09:00', end: '21:00' }, // Horário da barbearia como default se não houver específico
             saturday: { start: '08:00', end: '15:00' }
